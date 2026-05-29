@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: employee-portal-deployment
+
+  namespace: employee-portal
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: employee-portal
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: employee-portal
+
+    spec:
+
+      containers:
+
+      - name: employee-portal
+
+        image: naveen8698/employeeportalv1
+
+        ports:
+
+        - containerPort: 80
